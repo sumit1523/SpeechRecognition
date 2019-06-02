@@ -5,7 +5,7 @@ const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogni
 const reecognition = new SpeechRecognition();
 
 reecognition.onstart = function () {
-    console.log('voice is activated !!')
+    console.log('voice is activated !!');
 };
 
 reecognition.onresult = function (event) {
@@ -29,21 +29,21 @@ function readOutLoud(message) {
     speech.rate = 1;
     speech.pitch = 1;
 
+    // Random color generators
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    (function setRandomColor() {
+        $(".content").css("color", getRandomColor());
+    }
+    )();
+
     window.speechSynthesis.speak(speech);
 }
-
-// Random color generators
-
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
-
-(function setRandomColor() {
-    $(".content").css("color", getRandomColor());
-}
-)();
