@@ -32,3 +32,17 @@ body {
     right: 50%;
     transform: translate(50%,50%);
 }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(black , grey);
+    color: white;
+    text-align: center;
+ }
+
+ .footer a {
+     color: white;
+ }
